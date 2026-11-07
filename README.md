@@ -123,4 +123,14 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE
+).
+## Schema Decisions
+
+The database uses separate Book and Genre models. Each book has a `genreId` field that connects it to a genre using a foreign key relationship.
+
+I chose this design because one genre can have many books, while each book belongs to a genre. This avoids repeating the genre name in every book record.
+
+It also makes the database easier to maintain. For example, if a genre name changes, I only need to update it once in the Genre table instead of changing every book.
+
+The User model also includes a Role enum with two values: `PATRON` and `LIBRARIAN`. The default role is `PATRON`, so new users are assigned the basic role automatically.

@@ -57,3 +57,12 @@ pids
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Generated Prisma Client files
+/src/generated/
+/api/src/generated/
+
+# Compiled Prisma service files
+/api/src/prisma/*.js
+/api/src/prisma/*.js.map
+/api/src/prisma/*.d.ts
